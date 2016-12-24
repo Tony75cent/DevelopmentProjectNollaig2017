@@ -3,11 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-function passwordReqMsg(){
-    document.getElementById("passwordReq").style.display = "block";
-    /** Unlikely that this will be used, amend or delete in final edit 23.12.16 **/
-    
-}
+
 
 function imageSlider() {
     var i;
@@ -21,4 +17,11 @@ function imageSlider() {
     setTimeout(carousel, 2000); // Change image every 2 seconds
     /**Note : Use the fade out effect on the images, as it is an attractive effect  **/
 }
+function passwordReqMsg(){
+    document.getElementById("passwordReq").style.display = "block";
+    /** Unlikely that this will be used, amend or delete in final edit 23.12.16 **/
+    
+}
+
+
 
