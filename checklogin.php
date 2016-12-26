@@ -19,12 +19,14 @@ if ($count == 1) {
 
     $row = mysqli_fetch_assoc($result);
     $_SESSION['username'] = $myusername;
+        $_SESSION['password'] = $mypassword;
+
     $_SESSION['name'] = $row["name"]; /** Keep this ? it might be useful in personalizing the user experience.....type of thing ? **/
   /*   $_SESSION['week'] = $value; */ /* This is not going to be used but it could be changed to something that might be useful, retain */
     
-    header('Location:/DevelopmentProjectNollaig2017/index.php');
+    header('Location:/DevelopmentProjectNollaig2017/menu.html');
 } else {
-    header('Location:/DevelopmentProjectNollaig2017/login.php');
+    header('Location:/DevelopmentProjectNollaig2017/test2.html');
 
     mysqli_close($connection);
 }

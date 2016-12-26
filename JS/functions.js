@@ -13,15 +13,13 @@ function imageSlider() {
     }
     myIndex++;
     if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 2000); // Change image every 2 seconds
+    x[myIndex-1].style.display = "block";
+       /** var z = document.getElementById("imagedisplay").innerHTML = setTimeout(imageSlider, 2000); **/
+
+    setTimeout(imageSlider, 2000);  /// Change image every 2 seconds
     /**Note : Use the fade out effect on the images, as it is an attractive effect  **/
 }
-function passwordReqMsg(){
-    document.getElementById("passwordReq").style.display = "block";
-    /** Unlikely that this will be used, amend or delete in final edit 23.12.16 **/
-    
-}
+
 
 
 

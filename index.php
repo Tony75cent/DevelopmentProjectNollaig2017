@@ -5,5 +5,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$textDisplay = "This is a test page that verifys that the login is working";
+    header('Location:/DevelopmentProjectNollaig2017/login.php');
+
+/** $textDisplay = "This is a test page that verifys that the login is working";
 print $textDisplay;
+ * 
+ */
