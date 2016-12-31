@@ -22,8 +22,11 @@ $mypassword = mysqli_real_escape_string($connection, $mypassword);
 $result = mysqli_query($connection, $sql);
 
 if ($result) {
+   /** print 'OK'; **/
+   echo "OK"; 
+         /**  header('Location:/DevelopmentProjectNollaig2017/test2.html');  **/
 
-    echo "OK";  
+
 } else {
     echo "FAIL";
         

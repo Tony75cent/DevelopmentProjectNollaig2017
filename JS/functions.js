@@ -9,19 +9,19 @@ function imageSlider() {
     var i;
     var x = document.getElementsByClassName("mySlides");
     for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
+        x[i].style.display = "none";
     }
     myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";
-       /** var z = document.getElementById("imagedisplay").innerHTML = setTimeout(imageSlider, 2000); **/
+    if (myIndex > x.length) {
+        myIndex = 1
+    }
+    x[myIndex - 1].style.display = "block";
 
     setTimeout(imageSlider, 2000);  /// Change image every 2 seconds
-    /**Note : Use the fade out effect on the images, as it is an attractive effect  **/
 }
-function registrationAdvice(){
-    
-    document.getElementById("registerUser").innerHTML="Click this button to register";
+function registrationAdvice() {
+
+    document.getElementById("registerUser").innerHTML = "Click this button to register";
 }
 
 
@@ -52,10 +52,12 @@ function registerUser() {
     }
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-            var response = xmlhttp.responseText;
-           console.log(response); 
-            if (response === "OK") {
-                window.location = "index.html "; 
+            var response = xmlhttp.statusText; /** The statusText produces the correct result, that is when "OK" is echoed from the php,the flow of execution directs the "program" to login.php. A problem to be solved (later, not of prime importance) is that nothing is being registered in the console.log(response)Were small but significent changes made to the code externally ? The status of the php operation is being returned ie success or failure, that is what the statusText is responding to, not an arbritary string being echoed. **/
+            console.log(response);   /** Comment this out temprorarily to see if it changes the execution **/
+            if (response === "OK") {/**I am going to try OK  without the enclosing quote marks to see what happens **/
+                /** window.location = "index.html "; **/
+                window.location = "login.php"; 
+
 
 
             } else {
@@ -66,7 +68,7 @@ function registerUser() {
         }
     };
     /*  document.getElementById('registrationForm').value = "";*//*The execution is not reaching this line, the registrationError is being triggered */
-    xmlhttp.open("GET", UrlToSend, true);
+    xmlhttp.open("POST"/**"GET" **/, UrlToSend, true);
     xmlhttp.send();// The actual request is now being sent.
     return false;
 }
