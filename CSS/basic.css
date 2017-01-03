@@ -1,0 +1,60 @@
+body {
+    font-family: Arial;
+}
+
+rect:hover{
+    fill: orange;
+}
+rect{
+    fill: blue;
+}
+
+div.top {
+    z-index: 1;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 50px;
+    background: rgba(0,0,0,0.5);
+    color: whitesmoke;
+}
+
+div.graphicons {
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    height: 100%;
+}
+
+img.icon {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+fieldset {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    border: 0px;
+}
+label {
+    height: 100%;
+    display: inline-block;
+    background: transparent;
+    cursor: default;
+}
+
+label:hover {
+    background: rgba(0,255,255,0.5);
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+    background: white;
+}
