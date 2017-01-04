@@ -4,14 +4,14 @@ require 'validateSession.php';
 <!--This has been copied into the DevelopmentProjectNollaig2017 folder -->
 
 <!doctype html> 
-<!--
+
 <html min-height="100%">
     <head>
         <meta charset="utf-8">
         <title>fill with county's</title>
-        <link href="css/basic.css" rel="stylesheet" type="text/css"/>
-        <link href="css/tooltip.css" rel="stylesheet" type="text/css"/>
-        <link href="css/graphs.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/basic.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/tooltip.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/graphs.css" rel="stylesheet" type="text/css"/>
         <link href="css/layout.css" rel="stylesheet" type="text/css"/>
         <script src="JS/d3.v3.js"></script>
         <script src="JS/d3.tip.v0.6.3.js" type="text/javascript"></script>
@@ -20,7 +20,8 @@ require 'validateSession.php';
         <script src="js/D3_functions.js" type="text/javascript"></script>
         <script language = "javascript"  src= "js/jsfunctions.js"></script>
     </head>
-    <body onload="startup();">
+    <!--startup() is in functions.js -->
+    <body onload="startup();"> 
         <div class="top">
             <div class="graphicons">
                 <fieldset name="graphtype">
@@ -36,7 +37,7 @@ require 'validateSession.php';
         <div id="focus" class="inactive"></div>
     </body>
 </html>
-     -->
-     <html><h1>The session validation is working</h1></html>
+     
+     <!--html><h1>The session validation is working</h1></html-->
 
 
