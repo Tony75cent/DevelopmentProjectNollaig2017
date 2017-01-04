@@ -1,14 +1,10 @@
-
 <?php 
-session_start(true);
-if (!isset($_SESSION['username'])) {
-    header('Location: http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER[SERVER_PORT] . "/year4project/", true, 303);
-    exit();
-}
+require 'validateSession.php';
 ?>
 <!--This has been copied into the DevelopmentProjectNollaig2017 folder -->
 
 <!doctype html> 
+<!--
 <html min-height="100%">
     <head>
         <meta charset="utf-8">
@@ -40,5 +36,7 @@ if (!isset($_SESSION['username'])) {
         <div id="focus" class="inactive"></div>
     </body>
 </html>
+     -->
+     <html><h1>The session validation is working</h1></html>
 
 

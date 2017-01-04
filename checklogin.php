@@ -1,6 +1,5 @@
 <?php
 /**This file has been re-included in the Dewvelopment Project Nollaig 2016 folder  **/
-include 'PHP/configuration.php';
 include 'PHP/connectTodb.php';
 
 $tbl_name = 'authorizedusers'; // Table name
@@ -26,7 +25,7 @@ if ($count == 1) {
     
     header('Location:/DevelopmentProjectNollaig2017/menu.html');
 } else {
-    header('Location:/DevelopmentProjectNollaig2017/test2.html');
+    header('Location:/DevelopmentProjectNollaig2017/login.html');
 
     mysqli_close($connection);
 }
