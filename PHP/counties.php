@@ -38,6 +38,5 @@ require 'validateSession.php';
     </body>
 </html>
      
-     <!--html><h1>The session validation is working</h1></html-->
 
 
