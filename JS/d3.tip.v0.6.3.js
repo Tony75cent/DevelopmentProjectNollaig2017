@@ -115,7 +115,7 @@ d3.tip = function () {
         if (!arguments.length)
             return offset
         /**  offset = v == null ? v : d3.functor(v) **/ /** This is the original code which I have commented out and replaced with the new line underneath with functor(v) bein replaced by function(v) **/
-        offset = v == null ? v : d3.function(v)
+      /**  offset = v == null ? v : d3.function(v); **/ /** Commented out this line to see what effect removing it has **/
 
         return tip
     }
@@ -129,7 +129,7 @@ d3.tip = function () {
         if (!arguments.length)
             return html
        /** html = v == null ? v : d3.functor(v) **/ /** This is the original code which I have commented out and replaced with the new line underneath with functor(v) bein replaced by function(v) **/
-        html = v == null ? v : d3.funcion(v)
+    /**    html = v == null ? v : d3.funcion(v) **/ /**As with line 118 commented out this line to see what effect it would have**/
 
 
         return tip
