@@ -1,0 +1,56 @@
+div.svg-container {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    transition: all 5s ease-in-out;
+    padding: 0px;
+    margin: 0px;
+}
+
+h1 {
+    font-size: 1em;
+        transition: all 1s linear; 
+}
+
+
+@media (min-width: 450px) {
+    div.svg-container {
+        width: 50%;
+    }
+
+    h1 {
+        font-size: 1.1em;
+    }
+
+}
+
+@media (min-width: 800px) {
+    div.svg-container {
+        width: 33.3333%;
+    }
+    
+    h1 {
+        font-size: 1.3em;
+    }
+
+}
+@media (min-width: 1200px) {
+    div.svg-container {
+        width: 25%;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+}
+@media (min-width: 1600px) {
+    div.svg-container {
+        width: 20%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+}
