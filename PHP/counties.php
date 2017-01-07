@@ -17,7 +17,7 @@ require 'validateSession.php';
         <script src="JS/d3.tip.v0.6.3.js" type="text/javascript"></script>
         <script src="JS/d3pie.js" type="text/javascript"></script>
         <script src="JS/functions.js" type="text/javascript"></script>
-        <script src="js/D3_functions.js" type="text/javascript"></script>
+        <script src="JS/D3_functions.js" type="text/javascript"></script>
     </head>
     <!--startup() is in functions.js -->
     <body onload="startup();"> 
