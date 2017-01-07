@@ -1,4 +1,4 @@
-<?php 
+<?php
 require 'validateSession.php';
 ?>
 <!--This has been copied into the DevelopmentProjectNollaig2017 folder -->
@@ -13,8 +13,9 @@ require 'validateSession.php';
         <link href="../CSS/graphs.css" rel="stylesheet" type="text/css"/>
         <link href="../CSS/tooltip.css" rel="stylesheet" type="text/css"/>
         <link href="../CSS/layout.css" rel="stylesheet" type="text/css"/>
-         <script src="../JS/D3_functions.js" type="text/javascript"></script>
+        <script src="../JS/D3_functions.js" type="text/javascript"></script>
         <script src="../JS/d3pie.js" type="text/javascript"></script>
+        <script src="../JS/d3.js" type="text/javascript"></script>
         <script src="../JS/functions.js" type="text/javascript"></script>
         <script src="../JS/d3.tip.v0.6.3.js" type="text/javascript"></script>
         <script src="../JS/d3.min.js" type="text/javascript"></script>
@@ -36,6 +37,6 @@ require 'validateSession.php';
         <div id="focus" class="inactive"></div>
     </body>
 </html>
-     
+
 
 
