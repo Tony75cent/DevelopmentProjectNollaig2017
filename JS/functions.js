@@ -151,7 +151,7 @@ function getPopulationByCounty(countyid, elementId) {
     } else {
         var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-   /**  var PageToSendTo = "PHP/getPopulationData.php"; **/
+    /**  var PageToSendTo = "PHP/getPopulationData.php"; **/
     var PageToSendTo = "getPopulationData.php";
 
 
@@ -160,7 +160,8 @@ function getPopulationByCounty(countyid, elementId) {
     var UrlToSend = PageToSendTo + VariablePlaceholder + myVariable;
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-            var dataReturn = JSON.parse(xmlhttp.responseText);
+          var dataReturn = JSON.parse(xmlhttp.responseText); 
+
             var data = [];
             for (i = 0; i < dataReturn.length; i++) {
                 data.push({countyid: dataReturn[i].COUNTY_ID,
