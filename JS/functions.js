@@ -45,7 +45,9 @@ function registerUser() {
     /*  console.log("newUsername: " + newUsername + " newPassword: " + newPassword); */
 
     document.getElementById("registrationbutton").disabled = true;
-    var UrlToSend = "php/registerUser.php?newUsername=" + newUsername + "&newPassword=" + newPassword;
+    var UrlToSend = "PHP/registerUser.php?newUsername=" + newUsername + "&newPassword=" + newPassword;
+   /** var UrlToSend = "php/registerUser.php?newUsername=" + newUsername + "&newPassword=" + newPassword; **/
+
     if (window.XMLHttpRequest) {
         var xmlhttp = new XMLHttpRequest();
     } else {
@@ -57,7 +59,7 @@ function registerUser() {
             console.log(response);   /** Comment this out temprorarily to see if it changes the execution **/
             if (response === "OK") {/**I am going to try OK  without the enclosing quote marks to see what happens **/
                 /** window.location = "index.html "; **/
-                window.location = "login.php"; 
+                window.location = "login.php";
 
 
 
@@ -69,7 +71,7 @@ function registerUser() {
         }
     };
     /*  document.getElementById('registrationForm').value = "";*//*The execution is not reaching this line, the registrationError is being triggered */
-    xmlhttp.open("POST"/**"GET" **/, UrlToSend, true);
+    xmlhttp.open("POST"/**"GET" **/, UrlToSend, true); /**The original GET was working. The code stopped working when it was transferred as the addressing  started with   PHP/php...instad of being changed to  PHP/  **/
     xmlhttp.send();// The actual request is now being sent.
     return false;
 }
@@ -87,7 +89,7 @@ function startup() {
             .html(function (d) {
                 return "<strong>Population:</strong> <span style='color:red'>" + d.value + "</span>";
             });
-/* For loop */
+    /* For loop */
     for (i = 1; i < 31; i++) {
         var div = document.getElementById("graph" + i);
         if (div === null) {
@@ -125,7 +127,7 @@ function focusOff(element) {
     document.getElementById("focus").setAttribute("class", "inactive");
 }
 
- // JavaScript Document
+// JavaScript Document
 /*
  * Function name :getPopulationByCounty
  * 
@@ -149,7 +151,9 @@ function getPopulationByCounty(countyid, elementId) {
     } else {
         var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    var PageToSendTo = "php/getPopulationData.php";
+    var PageToSendTo = "PHP/getPopulationData.php";
+    /** var PageToSendTo = "php/getPopulationData.php"; **/
+
     var VariablePlaceholder = "?countyId=";
     var myVariable = countyid;
     var UrlToSend = PageToSendTo + VariablePlaceholder + myVariable;
@@ -165,12 +169,12 @@ function getPopulationByCounty(countyid, elementId) {
                     male: +dataReturn[i].Male2011,
                     female: +dataReturn[i].Female2011});
             }
-                if (document.getElementById("piebutton").checked) {
-                    createPieChart(data, elementId);
-                }
-                if (document.getElementById("barbutton").checked) {
-                    createBarChart(data, elementId);
-                }
+            if (document.getElementById("piebutton").checked) {
+                createPieChart(data, elementId);
+            }
+            if (document.getElementById("barbutton").checked) {
+                createBarChart(data, elementId);
+            }
         }
     };
     xmlhttp.open("GET", UrlToSend, true);
@@ -178,22 +182,23 @@ function getPopulationByCounty(countyid, elementId) {
 }
 
 
-function registerUser(){
-    
-    document.getElementById("registerbutton").setAttribute("onclick",reDirect());
-    
-    
-    
-    
-    
+function registerUser() {
+
+    document.getElementById("registerbutton").setAttribute("onclick", reDirect());
+
+
+
+
+
 }
-function reDirect(){
-    
-    
-    window.location="php/registerNewUser.php";
-    
-    
-    
+function reDirect() {
+
+
+    window.location = "php/registerNewUser.php";
+
+
+
+
 }
 /*
  * Function name :getHousingVacancy
@@ -216,7 +221,9 @@ function getHousingVacancy(countyid, elementId) {
     } else {
         var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    var PageToSendTo = "php/getHousingVacancy.php";
+    var PageToSendTo = "PHP/getHousingVacancy.php";
+    /**  var PageToSendTo = "php/getHousingVacancy.php"; **/
+
     var VariablePlaceholder = "?countyId=";
     var myVariable = countyid;
     var UrlToSend = PageToSendTo + VariablePlaceholder + myVariable;
@@ -228,16 +235,16 @@ function getHousingVacancy(countyid, elementId) {
             for (i = 0; i < dataReturn2.length; i++) {
                 data2.push({countyid: dataReturn2[i].COUNTY_ID,
                     county: dataReturn2[i].GEOGDESC,
-                    label: dataReturn2[i].CSOBARNAME, 
+                    label: dataReturn2[i].CSOBARNAME,
                     value: +dataReturn2[i].TOTAL_HOUSING_STOCK,
-                    vacancyRate: +dataReturn2[i].VACANCY_RATE }); 
+                    vacancyRate: +dataReturn2[i].VACANCY_RATE});
             }
-                if (document.getElementById("piebutton2").checked) {
-                    createPieChart2(data2, elementId);
-                }
-                if (document.getElementById("barbutton2").checked) {
-                    createBarChart2(data2, elementId);
-                }
+            if (document.getElementById("piebutton2").checked) {
+                createPieChart2(data2, elementId);
+            }
+            if (document.getElementById("barbutton2").checked) {
+                createBarChart2(data2, elementId);
+            }
         }
     };
     xmlhttp.open("GET", UrlToSend, true);
