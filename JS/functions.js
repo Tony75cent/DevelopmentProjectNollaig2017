@@ -46,7 +46,7 @@ function registerUser() {
 
     document.getElementById("registrationbutton").disabled = true;
     var UrlToSend = "PHP/registerUser.php?newUsername=" + newUsername + "&newPassword=" + newPassword;
-   /** var UrlToSend = "php/registerUser.php?newUsername=" + newUsername + "&newPassword=" + newPassword; **/
+    /** var UrlToSend = "php/registerUser.php?newUsername=" + newUsername + "&newPassword=" + newPassword; **/
 
     if (window.XMLHttpRequest) {
         var xmlhttp = new XMLHttpRequest();
@@ -151,8 +151,9 @@ function getPopulationByCounty(countyid, elementId) {
     } else {
         var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    var PageToSendTo = "PHP/getPopulationData.php";
-    /** var PageToSendTo = "php/getPopulationData.php"; **/
+   /**  var PageToSendTo = "PHP/getPopulationData.php"; **/
+    var PageToSendTo = "getPopulationData.php";
+
 
     var VariablePlaceholder = "?countyId=";
     var myVariable = countyid;
