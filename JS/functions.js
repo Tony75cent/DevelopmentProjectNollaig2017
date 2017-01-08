@@ -151,7 +151,6 @@ function getPopulationByCounty(countyid, elementId) {
     } else {
         var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    /**  var PageToSendTo = "PHP/getPopulationData.php"; **/
     var PageToSendTo = "getPopulationData.php";
 
 
