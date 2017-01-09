@@ -159,16 +159,24 @@ function getPopulationByCounty(countyid, elementId) {
     var UrlToSend = PageToSendTo + VariablePlaceholder + myVariable;
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-          var dataReturn = JSON.parse(xmlhttp.responseText); 
+            console.log(xmlhttp.responseText); /** This had been inserted for testing**/
+                var dataReturn = JSON.parse(xmlhttp.responseText); 
 
             var data = [];
             for (i = 0; i < dataReturn.length; i++) {
+
+                //  }
+
                 data.push({countyid: dataReturn[i].COUNTY_ID,
                     county: dataReturn[i].GEOGDESC,
                     label: dataReturn[i].CSOBARNAME,
                     value: +dataReturn[i].Total2011,
                     male: +dataReturn[i].Male2011,
                     female: +dataReturn[i].Female2011});
+
+
+
+
             }
             if (document.getElementById("piebutton").checked) {
                 createPieChart(data, elementId);
