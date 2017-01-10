@@ -87,7 +87,7 @@ function startup() {
             .attr('class', 'd3-tip')
             .offset([-10, 0])
             .html(function (d) {
-                return "<strong>Population:</strong> <span style='color:red'>" + d.value + "</span>";
+                return "<strong>Population:</strong><span style='color:red'>" + d.value + "</span>";
             });
     /* For loop */
     for (i = 1; i < 31; i++) {
@@ -159,25 +159,26 @@ function getPopulationByCounty(countyid, elementId) {
     var UrlToSend = PageToSendTo + VariablePlaceholder + myVariable;
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-            console.log(xmlhttp.responseText); /** This had been inserted for testing**/
+           /** JSON.parse(xmlhttp.responseText); /** This had been inserted for testing**/            
+        }
                 var dataReturn = JSON.parse(xmlhttp.responseText); 
 
             var data = [];
             for (i = 0; i < dataReturn.length; i++) {
 
-                //  }
 
                 data.push({countyid: dataReturn[i].COUNTY_ID,
                     county: dataReturn[i].GEOGDESC,
                     label: dataReturn[i].CSOBARNAME,
-                    value: +dataReturn[i].Total2011,
-                    male: +dataReturn[i].Male2011,
-                    female: +dataReturn[i].Female2011});
+                    value: +dataReturn[i].Male2011,
+                    male: +dataReturn[i].Female2011,
+                    female: +dataReturn[i].Total2011});
 
 
 
 
             }
+            {
             if (document.getElementById("piebutton").checked) {
                 createPieChart(data, elementId);
             }
