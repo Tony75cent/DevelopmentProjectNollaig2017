@@ -142,6 +142,8 @@ function focusOff(element) {
  */
 
 
+
+
 function getPopulationByCounty(countyid, elementId) {
     if (typeof countyid === "undefined") {
         countyid = document.getElementById('selectCounty').value;
@@ -152,46 +154,32 @@ function getPopulationByCounty(countyid, elementId) {
         var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     var PageToSendTo = "getPopulationData.php";
-
-
     var VariablePlaceholder = "?countyId=";
     var myVariable = countyid;
     var UrlToSend = PageToSendTo + VariablePlaceholder + myVariable;
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-           /** JSON.parse(xmlhttp.responseText); /** This had been inserted for testing**/            
-        }
-                var dataReturn = JSON.parse(xmlhttp.responseText); 
-
+            var dataReturn = JSON.parse(xmlhttp.responseText);
             var data = [];
             for (i = 0; i < dataReturn.length; i++) {
-
-
                 data.push({countyid: dataReturn[i].COUNTY_ID,
                     county: dataReturn[i].GEOGDESC,
                     label: dataReturn[i].CSOBARNAME,
-                    value: +dataReturn[i].Male2011,
-                    male: +dataReturn[i].Female2011,
-                    female: +dataReturn[i].Total2011});
-
-
-
-
+                    value: +dataReturn[i].Total2011,
+                    male: +dataReturn[i].Male2011,
+                    female2011: +dataReturn[i].Female2011});
             }
-            {
-            if (document.getElementById("piebutton").checked) {
-                createPieChart(data, elementId);
-            }
-            if (document.getElementById("barbutton").checked) {
-                createBarChart(data, elementId);
-            }
+                if (document.getElementById("piebutton").checked) {
+                    createPieChart(data, elementId);
+                }
+                if (document.getElementById("barbutton").checked) {
+                    createBarChart(data, elementId);
+                }
         }
     };
     xmlhttp.open("GET", UrlToSend, true);
     xmlhttp.send();// The actual request is now being sent.
 }
-
-
 function registerUser() {
 
     document.getElementById("registerbutton").setAttribute("onclick", reDirect());
