@@ -25,9 +25,9 @@ require 'validateSession.php';
         <div class="top">
             <div class="graphicons">
                 <fieldset name="graphtype">
-                    <input id="piebutton" type="radio" name="pie" checked="checked" onchange="startup();"/>
+                    <input id="piebutton" type="radio" name="pie"   onchange="startup();"/><!-- This had contained  checked="checked" -->
                     <label for="piebutton" class="pie"><img src="piechart.svg" class="icon"/></label>
-                    <input id="barbutton" type="radio" name="pie" onchange="startup();"/>
+                    <input id="barbutton" type="radio" name="pie" checked="checked" onchange="startup();"/>
                     <label for="barbutton" class="bar"><img src="barchart.svg" class="icon"/></label>
                 </fieldset>
             </div>

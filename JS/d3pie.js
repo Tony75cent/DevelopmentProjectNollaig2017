@@ -1599,6 +1599,7 @@
                                                 return location;
                                             })
                                     **/
+                                   /**
                                             .attr("fill", function (d) {
                                                 return d.color;
                                             })
@@ -1608,6 +1609,7 @@
                                             .style("font-family", function (d) {
                                                 return d.font;
                                             });
+                                    **/
                                 },
                                 positionTitle: function (pie) {
                                     var textComponents = pie.textComponents;

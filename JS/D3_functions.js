@@ -2,7 +2,12 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+ * 
+ * 
+ * 
  * This file is in the DevelopmentProjectNollaig2017 file
+ * 
+ * 
  */
 function createBarChart(dataReturn, elementId) {
 if (typeof elementId === "undefined") {
@@ -23,7 +28,7 @@ var width = 1200;
         for (i = 0; i < data.length; i++) {
 popTotal += data[i].value;
 }
-var formatPercent = d3.format(".0");
+var formatPercent =  new d3.format(".0"); /**Just inserted the new keyword to see how it might affect the execution **/
         //x and y Scales
         var xScale = d3.scale.ordinal()
         .rangeRoundBands([0, width], .1);

@@ -6,9 +6,8 @@ require 'connectTodb.php';
 $tbl_name = 'baronies'; // Table name 
 mysqli_select_db($connection, "$db_name")or die("cannot select a DB");
 /**$countyid = $_GET["countyId"]; **/ /** De-comment this line later and use in the SELECT statement **/
-
-/**$sql = "SELECT `COUNTY_ID`, `GEOGDESC`, `CSOBARNAME`, `Male2011`, `Female2011`, `Total2011` FROM `baronies` WHERE `COUNTY_ID`='" . $countyid;/** This is the original line * */
-$sql = "SELECT `COUNTY_ID`, `GEOGDESC`, `CSOBARNAME`, `Male2011`, `Female2011`, `Total2011` FROM `baronies` WHERE `COUNTY_ID`= 30";
+$countyid = 33; /**Use this hard coded value during testing/development and switch back to a dynamic value once all development issues have been resolved **/
+$sql = "SELECT `COUNTY_ID`, `GEOGDESC`, `CSOBARNAME`, `Male2011`, `Female2011`, `Total2011` FROM `baronies` WHERE `COUNTY_ID`=".$countyid;
 $query = mysqli_query($connection, $sql);
 
 if (!$query) {
