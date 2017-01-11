@@ -8,7 +8,7 @@ mysqli_select_db($connection, "$db_name")or die("cannot select a DB");
 /**$countyid = $_GET["countyId"]; **/ /** De-comment this line later and use in the SELECT statement **/
 
 /**$sql = "SELECT `COUNTY_ID`, `GEOGDESC`, `CSOBARNAME`, `Male2011`, `Female2011`, `Total2011` FROM `baronies` WHERE `COUNTY_ID`='" . $countyid;/** This is the original line * */
-$sql = "SELECT `COUNTY_ID`, `GEOGDESC`, `CSOBARNAME`, `Male2011`, `Female2011`, `Total2011` FROM `baronies` WHERE `COUNTY_ID`= 21";
+$sql = "SELECT `COUNTY_ID`, `GEOGDESC`, `CSOBARNAME`, `Male2011`, `Female2011`, `Total2011` FROM `baronies` WHERE `COUNTY_ID`= 30";
 $query = mysqli_query($connection, $sql);
 
 if (!$query) {

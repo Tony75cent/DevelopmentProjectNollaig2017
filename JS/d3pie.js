@@ -1583,6 +1583,12 @@
                                                 x: text.offscreenCoord,
                                                 y: text.offscreenCoord
                                             })
+                                           /**
+                                            * 
+                                            * @returns {d3pie_L22.text.addTitle.d3pie_L1588.location}
+                                            */
+                                              /** Commented out the following to see what effect it will have  11.01.16 **/  
+                                              /**
                                             .attr("text-anchor", function () {
                                                 var location;
                                                 if (pie.options.header.location === "top-center" || pie.options.header.location === "pie-center") {
@@ -1592,6 +1598,7 @@
                                                 }
                                                 return location;
                                             })
+                                    **/
                                             .attr("fill", function (d) {
                                                 return d.color;
                                             })
