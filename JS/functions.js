@@ -70,7 +70,7 @@ function registerUser() {
         }
     };
     /*  document.getElementById('registrationForm').value = "";*//*The execution is not reaching this line, the registrationError is being triggered */
-    xmlhttp.open("POST"/**"GET" **/, UrlToSend, true); /**The original GET was working. The code stopped working when it was transferred as the addressing  started with   PHP/php...instad of being changed to  PHP/  **/
+    xmlhttp.open('GET' , UrlToSend, true); /**The original GET was working. The code stopped working when it was transferred as the addressing  started with   PHP/php...instad of being changed to  PHP/  **/
     xmlhttp.send();// The actual request is now being sent.
     return false;
 }

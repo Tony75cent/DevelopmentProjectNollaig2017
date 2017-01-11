@@ -224,6 +224,7 @@ var formatPercent = d3.format(".0");
         .attr("text-anchor", "middle")
         .text(data[0].county + "(Population: " + popTotal + ")");
         }
+        
 
 /*
  * Function name :createPieChart
@@ -237,6 +238,8 @@ var formatPercent = d3.format(".0");
  * elementId;
  * 
  */
+ 
+ 
 function createPieChart(dataReturn, elementId) {
 if (typeof elementId === "undefined") {
 var container = document.getElementById("graph" + dataReturn[0].countyid);
@@ -255,7 +258,7 @@ popTotal += dataReturn[i].value;
 var pie = new d3pie(container.getAttribute("id"), {
 "header": {
 "title": {
-"text": dataReturn[0].county,
+"text": dataReturn[0].county,/**This was county which might have been a typo, try it with countyid to see what happens --- it's not a typo, when it was changed to countyid the returned value in the browser was a number instead of a county name **/
         "fontSize": 24,
         "font": "Arial"
 },
@@ -330,6 +333,9 @@ var pie = new d3pie(container.getAttribute("id"), {
         }
 });
         }
+        
+        
+        
 function createPieChart2(dataReturn2, elementId) {
 if (typeof elementId === "undefined") {
 var container = document.getElementById("graph" + dataReturn2[0].countyid);
@@ -538,6 +544,7 @@ var formatPercent = d3.format(".0");
         .attr("text-anchor", "middle")
         .text(data2[0].county + "(Housing stock: " + housingStock + ")");
         }
+
 
 
 function emptyPropertys(arg1,arg2) {
