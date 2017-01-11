@@ -46,7 +46,6 @@ function registerUser() {
 
     document.getElementById("registrationbutton").disabled = true;
     var UrlToSend = "PHP/registerUser.php?newUsername=" + newUsername + "&newPassword=" + newPassword;
-    /** var UrlToSend = "php/registerUser.php?newUsername=" + newUsername + "&newPassword=" + newPassword; **/
 
     if (window.XMLHttpRequest) {
         var xmlhttp = new XMLHttpRequest();
@@ -164,7 +163,7 @@ function getPopulationByCounty(countyid, elementId) {
             for (i = 0; i < dataReturn.length; i++) {
                 data.push({countyid: dataReturn[i].COUNTY_ID,
                     county: dataReturn[i].GEOGDESC,
-                    label: dataReturn[i].CSOBARNAME,
+                    barony: dataReturn[i].CSOBARNAME,
                     value: +dataReturn[i].Total2011,
                     male: +dataReturn[i].Male2011,
                     female2011: +dataReturn[i].Female2011});
@@ -220,7 +219,6 @@ function getHousingVacancy(countyid, elementId) {
         var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     var PageToSendTo = "PHP/getHousingVacancy.php";
-    /**  var PageToSendTo = "php/getHousingVacancy.php"; **/
 
     var VariablePlaceholder = "?countyId=";
     var myVariable = countyid;

@@ -28,7 +28,7 @@ var width = 1200;
         for (i = 0; i < data.length; i++) {
 popTotal += data[i].value;
 }
-var formatPercent =  new d3.format(".0"); /**Just inserted the new keyword to see how it might affect the execution **/
+var formatPercent =   d3.format(".0"); /**Just inserted the new keyword to see how it might affect the execution **/
         //x and y Scales
         var xScale = d3.scale.ordinal()
         .rangeRoundBands([0, width], .1);
