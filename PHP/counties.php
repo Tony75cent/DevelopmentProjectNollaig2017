@@ -18,6 +18,7 @@ require 'validateSession.php';
         <script src="../JS/d3.js" type="text/javascript"></script>
         <script src="../JS/functions.js" type="text/javascript"></script>
         <script src="../JS/d3.tip.v0.6.3.js" type="text/javascript"></script>
+        <script src="https://d3js.org/d3.v4.min.js"></script> <!--Inserted this link to see if the d3 object would accept the data[] array -->
         <script src="../JS/d3.min.js" type="text/javascript"></script>
     </head>
     <!--startup() is in functions.js -->
