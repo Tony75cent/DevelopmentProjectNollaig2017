@@ -32,7 +32,12 @@ function createBarChart(dataReturn, elementId) {
     //x and y Scales
   //  var xScale = d3.scale.ordinal() ///** 14.-1.17 This was triggering an error, replaced it with scaleOrdinal as per d3.v4.min.js and everything seems ok. It could be that for some reason, yet to be discovered, the function names have been changed, review this en la matin **/
     var xScale = d3.scaleOrdinal() /**Just read a posting on Stackoverflow which said that d3.scale.linear() had been changed to scalralinear() **/
-
+/**14.01.17 @22:14  Just read on Stackoverflow that the scale.ordinal and .rangeRoundBands has been replaced by the following chunk of code
+ *   var x = d3.scaleBand()
+    .rangeRound([0, width])
+    .padding(0.1);
+    Insert the above code a demain and verify 22:16
+     * **/
             .rangeRoundBands([0, width], .1);/** 14.01.17 The rangerRoundBands is triggering an error. Did a ctrl+F search on the d3.v4.min.js and its coming up blank, the functionunder that name is not present. Look at this in the morning **/
     var yScale = d3.scale.linear()
             .range([(height - 40), 0]);
