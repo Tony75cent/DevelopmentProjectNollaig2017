@@ -89,7 +89,8 @@ function startup() {
                 return "<strong>Population:</strong><span style='color:red'>" + d.value + "</span>";
             });
     /* For loop */
-    for (i = 1; i < 31; i++) {
+ /**   for (i = 1; i < 31; i++) **//** Commented this out for testing**/
+    {
         var div = document.getElementById("graph" + i);
         if (div === null) {
             div = document.createElement("div");
