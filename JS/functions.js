@@ -163,13 +163,13 @@ function getPopulationByCounty(countyid, elementId) {
             for (i = 0; i < dataReturn.length; i++) {
                 data.push({countyid: dataReturn[i].COUNTY_ID,
                     county: dataReturn[i].GEOGDESC,
-                    barony: dataReturn[i].CSOBARNAME,
+                    label: dataReturn[i].CSOBARNAME,
                     value: +dataReturn[i].Total2011,
                     male: +dataReturn[i].Male2011,
-                    female2011: +dataReturn[i].Female2011});
+                    female: +dataReturn[i].Female2011});
             }
                 if (document.getElementById("piebutton").checked) {
-                    createPieChart(data, elementId);
+                    createPieChart(data, elementId); /**Temprorarly commented out in testing **/
                 }
                 if (document.getElementById("barbutton").checked) {
                     createBarChart(data, elementId);

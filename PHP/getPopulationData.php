@@ -23,5 +23,6 @@ for ($x = 0; $x < mysqli_num_rows($query); $x++) {
     $data[] = mysqli_fetch_assoc($query);
 }
 print( json_encode($data)); // Data is returned in JSON format.
+
 mysqli_close($connection);
 

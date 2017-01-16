@@ -321,3 +321,13 @@ var formatPercent = d3.format(".0");
         .text(data[0].county + "(Population: " + popTotal + ")");
         }
         
+___________________________________________________________________________________________________
+/** var xScale = d3.scaleBand() **/
+
+            /** 14.-1.17 This was triggering an error, replaced it with scaleOrdinal as per d3.v4.min.js and everything seems ok. It could be that for some reason, yet to be discovered, the function names have been changed, review this en la matin **/
+            /**  var xScale = d3.scaleOrdinal() **//**Just read a posting on Stackoverflow which said that d3.scale.linear() had been changed to scalralinear() **/
+            /**14.01.17 @22:14  Just read on Stackoverflow that the scale.ordinal and .rangeRoundBands has been replaced by the following chunk of code **/
+            /**
+             var x = d3.scaleBand()
+             **/
+            /**
