@@ -5,9 +5,11 @@
  * Thius is in the DevelopmentProjectNollaig2017 folder 
  */
 function createBarChart(dataReturn, elementId) {
-    alert(" in createBarChart 1");
+   /** alert(" in createBarChart 1"); **/ /** This was inserted for testing, removwe on fiunal edit **/
 if (typeof elementId === "undefined") {
-var container = document.getElementById("graph" + dataReturn[0].countyid);
+/**var container = document.getElementById("graph" + dataReturn[0].countyid); **/
+var container = document.getElementById("graph" + dataReturn[3].countyid);
+
         elementId = container.getAttribute("id");
         container.innerHTML = "";
 } else {
@@ -25,6 +27,7 @@ var width = 1200;
         var popTotal = 0;
         for (i = 0; i < data.length; i++) {
 popTotal += data[i].value;
+console.log(popTotal);/** This is returning the male + female total**/
 }
 var formatPercent = d3.format(".0");
         //x and y Scales
