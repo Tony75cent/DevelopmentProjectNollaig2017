@@ -9,26 +9,27 @@
     <body style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: black; color: whitesmoke; font-family: Arial; text-align: center; width: 100%;">
         <div style="width: 100%; padding-top: 20%;">
             <h1>Register new user details</h1>
-            <div>
-                <div style="margin-top: 4em; padding: 5px;">
-                    <div id="registrationError" style="display: none; color: red; font-weight: bold;">ERROR username and/or password already present</div>
-                    <form   id="registrationForm"  onsubmit="return registerUser();" >
-                        <div>
-                            <div style="display: inline-block; width: 100px;"><label for="newUsername">username:</label></div>
-                            <div style="display: inline-block;"><input id="newUsername" type="text" name="user" required/></div>
-                        </div>
-                        <div>
-                            <div style="display: inline-block; width: 100px;"><label for="newPassword">password:</label></div>
-                            <div style="display: inline-block;"><input id="newPassword" type="password" name="password" required/></div>
-                        </div>
-                        <div>
-                            <div style="display: inline-block; width: 100px;">&nbsp;</div>
-                            <div style="display: inline-block;"><input id="registrationbutton" type="submit" value="Registration details"></div>
-
-                        </div>
-                    </form>
+            
+                <div>
+                    <div style="margin-top: 4em; padding: 5px;">
+                        <div id="registrationError" style="display: none; color: red; font-weight: bold;">ERROR username and/or password already present</div>
+                        <form   id="registrationForm"  onsubmit="return registerUser();" >
+                            <div>
+                                <div style="display: inline-block; width: 100px;"><label for="newUsername">username:</label></div>
+                                <div style="display: inline-block;"><input id="newUsername" type="text" name="user" required/></div>
+                            </div>
+                            <div>
+                                <div style="display: inline-block; width: 100px;"><label for="newPassword">password:</label></div>
+                                <div style="display: inline-block;"><input id="newPassword" type="password" name="password" required/></div>
+                            </div>
+                            <div>
+                                <div style="display: inline-block; width: 100px;">&nbsp;</div>
+                                <div style="display: inline-block;"><input id="registrationbutton" type="submit" value="Registration details"></div>
+    
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
         </div>
 
     </body>

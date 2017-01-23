@@ -42,7 +42,7 @@ function registrationAdvice() {
 function registerUser() {
     var newUsername = document.getElementById("newUsername").value;
     var newPassword = document.getElementById("newPassword").value;
-    /*  console.log("newUsername: " + newUsername + " newPassword: " + newPassword); */
+    console.log("newUsername: " + newUsername + " newPassword: " + newPassword);
 
     document.getElementById("registrationbutton").disabled = true;
     var UrlToSend = "PHP/registerUser.php?newUsername=" + newUsername + "&newPassword=" + newPassword;
@@ -54,7 +54,8 @@ function registerUser() {
     }
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-            var response = xmlhttp.statusText; /** The statusText produces the correct result, that is when "OK" is echoed from the php,the flow of execution directs the "program" to login.php. A problem to be solved (later, not of prime importance) is that nothing is being registered in the console.log(response)Were small but significent changes made to the code externally ? The status of the php operation is being returned ie success or failure, that is what the statusText is responding to, not an arbritary string being echoed. **/
+            var response = xmlhttp.statusText;
+            /** The statusText produces the correct result, that is when "OK" is echoed from the php,the flow of execution directs the "program" to login.php. A problem to be solved (later, not of prime importance) is that nothing is being registered in the console.log(response)Were small but significent changes made to the code externally ? The status of the php operation is being returned ie success or failure, that is what the statusText is responding to, not an arbritary string being echoed. **/
             console.log(response);   /** Comment this out temprorarily to see if it changes the execution **/
             if (response === "OK") {/**I am going to try OK  without the enclosing quote marks to see what happens **/
                 /** window.location = "index.html "; **/
@@ -70,7 +71,7 @@ function registerUser() {
         }
     };
     /*  document.getElementById('registrationForm').value = "";*//*The execution is not reaching this line, the registrationError is being triggered */
-    xmlhttp.open('GET' , UrlToSend, true); /**The original GET was working. The code stopped working when it was transferred as the addressing  started with   PHP/php...instad of being changed to  PHP/  **/
+    xmlhttp.open('GET', UrlToSend, true); /**The original GET was working. The code stopped working when it was transferred as the addressing  started with   PHP/php...instad of being changed to  PHP/  **/
     xmlhttp.send();// The actual request is now being sent.
     return false;
 }
@@ -89,7 +90,7 @@ function startup() {
                 return "<strong>Population:</strong><span style='color:red'>" + d.value + "</span>";
             });
     /* For loop */
- /**   for (i = 1; i < 31; i++) **//** Commented this out for testing**/
+    for (i = 1; i < 31; i++)
     {
         var div = document.getElementById("graph" + i);
         if (div === null) {
@@ -169,17 +170,19 @@ function getPopulationByCounty(countyid, elementId) {
                     male: +dataReturn[i].Male2011,
                     female: +dataReturn[i].Female2011});
             }
-                if (document.getElementById("piebutton").checked) {
-                    createPieChart(data, elementId); /**Temprorarly commented out in testing **/
-                }
-                if (document.getElementById("barbutton").checked) {
-                    createBarChart(data, elementId);
-                }
+            if (document.getElementById("piebutton").checked) {
+                createPieChart(data, elementId);
+            }
+            if (document.getElementById("barbutton").checked) {
+                createBarChart(data, elementId);
+            }
         }
     };
     xmlhttp.open("GET", UrlToSend, true);
     xmlhttp.send();// The actual request is now being sent.
 }
+/** I commented out the function below as there may be a clash with the AJAX registerUser function at the top of this page**/
+/**
 function registerUser() {
 
     document.getElementById("registerbutton").setAttribute("onclick", reDirect());
@@ -189,10 +192,13 @@ function registerUser() {
 
 
 }
+**/
 function reDirect() {
 
 
-    window.location = "php/registerNewUser.php";
+    /**window.location = "php/registerNewUser.php"; **/
+        window.location = "PHP/registerUser.php";
+
 
 
 

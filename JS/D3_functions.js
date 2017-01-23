@@ -5,6 +5,7 @@
  * Thius is in the DevelopmentProjectNollaig2017 folder 
  */
 function createBarChart(dataReturn, elementId) {
+    alert(" in createBarChart 1");
 if (typeof elementId === "undefined") {
 var container = document.getElementById("graph" + dataReturn[0].countyid);
         elementId = container.getAttribute("id");
@@ -19,6 +20,8 @@ var width = 1200;
         var height = 600;
         var margin = {top: 40, right: 40, bottom: 60, left: 60};
         var data = dataReturn;
+        alert(" in createBarChart");
+        console.log(data); /**Inserted this to see the vaslues if any which are being passed in tn the array**/
         var popTotal = 0;
         for (i = 0; i < data.length; i++) {
 popTotal += data[i].value;
