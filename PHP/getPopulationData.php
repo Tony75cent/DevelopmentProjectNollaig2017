@@ -7,7 +7,9 @@ $tbl_name = 'baronies'; // Table name
 mysqli_select_db($connection, "$db_name")or die("cannot select a DB");
 $countyid = $_GET["countyId"];  /** De-comment this line later and use in the SELECT statement **/
 /**$countyid = 22;**/ /**Use this hard coded value during testing/development and switch back to a dynamic value once all development issues have been resolved **/
-$sql = "SELECT `COUNTY_ID`, `GEOGDESC`, `CSOBARNAME`, `Male2011`, `Female2011`, `Total2011` FROM `baronies` WHERE `COUNTY_ID`=".$countyid;
+ $sql = "SELECT `COUNTY_ID`, `GEOGDESC`, `CSOBARNAME`, `Male2011`, `Female2011`, `Total2011` FROM `baronies` WHERE `COUNTY_ID`=".$countyid; 
+/**$sql = "SELECT `COUNTY_ID`, `GEOGDESC`, `CSOBARNAME`,'Total2011', `Male2011`, `Female2011` FROM `baronies` WHERE `COUNTY_ID`=".$countyid; /** 06/02/2017Changed the select statemnt order so that Total2011 comes first **/
+
 $query = mysqli_query($connection, $sql);
 
 if (!$query) {

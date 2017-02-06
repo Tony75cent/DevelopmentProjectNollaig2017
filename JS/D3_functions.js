@@ -7,7 +7,7 @@
 function createBarChart(dataReturn, elementId) {
     /** alert(" in createBarChart 1"); **/ /** This was inserted for testing, removwe on fiunal edit **/
     if (typeof elementId === "undefined") {
-        var container = document.getElementById("graph" + dataReturn[0].countyid); 
+        var container = document.getElementById("graph" + dataReturn[0].countyid);
 
         elementId = container.getAttribute("id");
         container.innerHTML = "";
@@ -21,8 +21,8 @@ function createBarChart(dataReturn, elementId) {
     var height = 600;
     var margin = {top: 40, right: 40, bottom: 60, left: 60};
     var data = dataReturn;
- /**   alert(" in createBarChart"); **/ /**This was included for testing.Remove on final edit  **/
-   console.log(data); /**Inserted this to see the vaslues if any which are being passed in tn the array **/
+    /**   alert(" in createBarChart"); **/ /**This was included for testing.Remove on final edit  **/
+    console.log(data); /**Inserted this to see the values if any which are being passed in tn the array **/
     var popTotal = 0;
     for (i = 0; i < data.length; i++) {
         popTotal += data[i].value;
@@ -30,11 +30,14 @@ function createBarChart(dataReturn, elementId) {
         console.log(data[i].county);/** This is returning the county name**/
         console.log(data[i].label);/** This is returning the barony name **/
     }
-    var formatPercent = d3.format(".0"); 
+    
+    var formatPercent = d3.format(".0");
     //x and y Scales
     var xScale = d3.scale.ordinal()
 
-            .rangeRoundBands([0, width], .1);
+            .rangeRoundBands([0, width], .1);/** Changed 1.2.17**/
+
+
     var yScale = d3.scale.linear()
             .range([(height - 40), 0]);
     xScale.domain(data.map(function (d) {

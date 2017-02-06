@@ -1,5 +1,5 @@
 <?php
-/**This file has been re-included in the Dewvelopment Project Nollaig 2016 folder  **/
+/**This file has been re-included in the Development Project Nollaig 2016 folder  **/
 include 'PHP/connectTodb.php';
 
 $tbl_name = 'authorizedusers'; // Table name
